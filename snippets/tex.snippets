@@ -129,11 +129,14 @@ snippet template
 	%picture stuff
 	\usepackage{graphicx}
 	\DeclareGraphicsExtensions{.pdf}
-	%code stuff
+	%code stuff. Get a nice font for code.
 	\usepackage{listings}
+	\usepackage[T1]{fontenc}
+	\usepackage{beramono}
 	%font stuff
-	\usepackage[scaled]{helvet}
-	\renewcommand*\familydefault{\sfdefault}
+	\usepackage[T1]{fontenc}
+	\usepackage[sc]{mathpazo}
+	\linespread{1.05} % Palatino needs more leading (space between lines)
 	%turn off all of the numbers? Uncomment the next line!
 	${1:}\setcounter{secnumdepth}{-1} 
 	%title stuff
@@ -142,8 +145,11 @@ snippet template
 
 	\begin{document}
 	\maketitle
-	\lstset{language=${3:LANGUAGE}, basicstyle=\footnotesize, 
-	postbreak=\space, breakindent=5pt, breaklines}
+	\lstset{language=${3:LANGUAGE}, 
+			basicstyle=\footnotesize\ttfamily,
+			postbreak=\space, 
+			breakindent=5pt, 
+			breaklines}
 	${4:%Start Typing!}
 	\end{document}
 snippet file
@@ -168,7 +174,6 @@ snippet proof
 	\begin{proof}[${1:}]
 		${2: %Proof goes here}
 	\end{proof}
-	
 
 # things for sets
 snippet RR
@@ -177,4 +182,3 @@ snippet NN
 	\mathbb{N}
 snippet QQ
 	\mathbb{Q}
-
