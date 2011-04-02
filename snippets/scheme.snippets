@@ -1,0 +1,32 @@
+snippet #!
+	#!/usr/bin/guile -s
+	!#
+snippet docs
+	;
+	;File: `Filename('$1.py', 'foo.py')`
+	;Author: `g:snips_author`
+	;Description: ${1}
+	;
+snippet cb
+	;------------------------------------------------------------------------------
+	; ${1: comment goes here}
+	;------------------------------------------------------------------------------
+# use the Little Schemer atom test
+snippet atom?
+	(define atom?
+	  (lambda (x)
+		(and (not (pair? x)) (not (null? x)))))
+	${2}
+snippet def
+	(define ${1})
+snippet ld
+	(lambda ${1})
+snippet cond
+	(cond ${1})
+snippet car
+	(car ${1})
+snippet cdr
+	(cdr ${1})
+snippet disp
+	(display ${1})
+	(newline)

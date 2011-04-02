@@ -1,0 +1,48 @@
+# main
+snippet main
+	module Main where
+	import System.Environment
+
+	main :: IO ()
+	main = do
+		args <- getArgs
+# import
+snippet imp
+	import ${1:System.Environment}
+# Module Docstring
+snippet docs
+	-------------------------------------------------------------------------------
+	-- File: `Filename('$1.hs', 'foo.hs')`
+	-- Author: `g:snips_author`
+	-- Description: ${1}
+	-------------------------------------------------------------------------------
+# comment block
+snippet cb
+	-------------------------------------------------------------------------------
+	-- ${1: comment goes here}
+	-------------------------------------------------------------------------------
+# function
+snippet func
+	${1:function} :: (${2:"Type statement"}) => ${3:"first arg"} -> ${4:"second arg"}
+# guard line
+snippet guar
+	| ${1:"Arg"} = ${2:"Act"}
+# where line
+snippet wh
+	where ${1:"Chicken"} = ${2:"Egg"}
+# extended let. The normal one doesn't really need a snippet.
+snippet let
+	let ${1:"chicken"} = ${2:"egg"}
+	in  $1
+# set element abbreviation
+snippet in
+	<- 
+# arrow abbreviation
+snippet ar
+	-> 
+# case abbreviation
+snippet case
+	case ${1:"expression"} of ${2:"pattern"} -> ${3:"result"}
+	                                 ${4:"pattern"} -> ${5:"result"}
+snippet ld
+	${1:f} = \ ${2:x} -> ${3:x}
