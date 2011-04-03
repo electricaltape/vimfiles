@@ -21,3 +21,16 @@ ab wxx w_{xx}
 ab gelt2 \cos \bigg( \dfrac{(2n-1)}{2}\pi x \bigg)
 ab gelt3 \sin \bigg( \dfrac{(2n-1)}{2}\pi x \bigg)
 "vim:syntax=vim
+
+" Special Commands
+func! WriteLatex()
+    w | !pdflatex %
+endfu
+
+" special autocommands
+if !exists("latex_autocommands_loaded")
+    let latex_autocommands_loaded = 1
+    " use s- over highlighted text to surround with \bigg
+    let b:surround_45 = "\\bigg(\r\\bigg)" 
+
+endif
