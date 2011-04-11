@@ -25,6 +25,10 @@ ab gelt3 \sin \bigg( \dfrac{(2n-1)}{2}\pi x \bigg)
 " Special Commands
 func! WriteLatex()
     w | !pdflatex %
+    if !exists("loaded_new_pdf")
+        let loaded_new_pdf = 1
+        !evince %:t:r.pdf &
+    endif
 endfu
 
 " special autocommands
@@ -32,5 +36,4 @@ if !exists("latex_autocommands_loaded")
     let latex_autocommands_loaded = 1
     " use s- over highlighted text to surround with \bigg
     let b:surround_45 = "\\bigg(\r\\bigg)" 
-
 endif

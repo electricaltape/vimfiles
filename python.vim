@@ -25,7 +25,7 @@ set omnifunc=pythoncomplete#Complete
 inoremap <Nul> <C-x><C-o>
 
 " Wrap at 72 chars for comments.
-set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
+" set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 
 " `gf` jumps to the filename under the cursor.  Point at an import statement
 " and jump to it!
