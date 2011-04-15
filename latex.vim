@@ -1,5 +1,7 @@
 " latex.vim
 " configuration file for latex!
+" of course, the most important setting:
+let g:tex_flavor='latex'
 
 " General Abbreviations
 ab \i \item

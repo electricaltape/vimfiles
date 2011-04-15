@@ -26,8 +26,6 @@ filetype indent on
 set ofu=syntaxcomplete#Complete
 set hid " change buffer and move with out saving
 
-" Fix terminal emulation weirdness on Screen (and others)
-set t_ku=lLuHoJem
 " compiler settings
 " compiler gcc
 
@@ -51,6 +49,11 @@ set showmatch " show matching braces
 set mat=2 " blink for that many tenths of seconds!
 set showcmd " shows what you type
 highlight Pmenu ctermbg=238 gui=bold " set the autocomplete box to legible
+" gui stuff"
+if has('gui_running')
+    colorscheme darkburn
+    set gfn=Inconsolata\ Medium\ 12
+endif
 
 " Now get indentation right.
 set cinwords=if,else,while,do,for,switch,case,function,elif,class
@@ -60,9 +63,6 @@ set shiftwidth=4
 set smarttab " will move by 4 spaces, as set above
 set expandtab
 set autoindent
-
-""""""LaTeX Settings"""""" 
-let g:tex_flavor='latex'
 
 """""Fortran Settings"""""" 
 " Fix the default formatting. I almost never used fixed source.
@@ -77,6 +77,10 @@ else
     unlet! fortran_free_source
 endif
 
+"""""LaTeX Settings"""""" 
+" Vim is weird and screws this up if it is not run before autocommands.
+let g:tex_flavor='latex'
+
 """""Auto Commands; only execute once!"""""
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
@@ -84,6 +88,8 @@ if !exists("autocommands_loaded")
     " check the folder ~/.vim/skel/ for templates
     autocmd BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
     " set correct mode
+    autocmd BufRead,BufNewFile *.geo		setfiletype gmsh
+    autocmd BufRead,BufNewFile *.mac		setfiletype maxima
     autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
     autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/.vim/latex.vim
     autocmd BufRead,BufNewFile,FileReadPost *.gnuplot source ~/.vim/gnuplot.vim
