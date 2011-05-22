@@ -121,24 +121,25 @@ snippet page
 snippet template
 	\documentclass[letterpaper,10pt]{article}
 	\usepackage[top=1in,right=1in,left=1in,bottom=1in]{geometry}
-	%math stuff
+	% math stuff
 	\usepackage{amsmath}
 	\usepackage{amsfonts}
 	\usepackage{amsthm}
 	\usepackage{amssymb}
-	%picture stuff
+	\usepackage{cancel}
+	% picture stuff
 	\usepackage{graphicx}
 	\DeclareGraphicsExtensions{.pdf}
-	%code stuff. Get a nice font for code.
+	% code stuff. Get a nice font for code.
 	\usepackage{listings}
 	\usepackage{beramono}
-	%font stuff
+	% font stuff
 	\usepackage[T1]{fontenc}
 	\usepackage[sc]{mathpazo}
 	\linespread{1.05} % Palatino needs more leading (space between lines)
-	%turn off all of the numbers? Uncomment the next line!
+	% turn off all of the numbers? Uncomment the next line!
 	${1:}\setcounter{secnumdepth}{-1} 
-	%title stuff
+	% title stuff
 	\title{${2:Title Goes Here}}
 	\author{Dave Wells}
 	\begin{document}
@@ -159,6 +160,8 @@ snippet graph
 	\end{center}
 	
 # math stuff
+snippet e
+	e^{${1:x}} ${2}
 snippet df
 	\dfrac{${1:1}}{${2:2}} ${3}
 snippet int
@@ -168,7 +171,7 @@ snippet sum
 snippet ip
 	\langle ${1:.},${2:.} \rangle ${3}
 snippet norm
-	\parallel ${1:.} \parallel_{${2:L_2}}
+	\| ${1:.} \|_{${2:L_2}}
 snippet proof
 	\begin{proof}[${1:}]
 		${2: %Proof goes here}
@@ -186,6 +189,34 @@ snippet QQ
 
 # comment blocks
 snippet cb
-	%--------------------------------------------------------------------------------
+	%------------------------------------------------------------------------------
 	% ${1: Comment}
-	%--------------------------------------------------------------------------------
+	%------------------------------------------------------------------------------
+snippet cb1
+	%--------------------------------------------------------------------------
+	% ${1: Comment}
+	%--------------------------------------------------------------------------
+
+# bibtex stuff
+snippet book
+	@book{${1:Title},
+		author    = 
+		title     =
+		year      =
+		publisher =
+		address   =
+		pages     =
+		}
+	
+# beamer stuff
+snippet frame
+	\begin{frame}
+	\frametitle{${1:Title}}
+		\begin{itemize}
+			\item 
+		\end{itemize}
+		\pause
+		\begin{itemize}
+			\item 
+		\end{itemize}
+	\end{frame}

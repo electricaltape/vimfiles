@@ -1,9 +1,16 @@
+snippet docs
+	/*
+	File: `Filename('$1.c', 'foo.c')`
+	Author: David Wells
+	Description: ${1}
+	*/
+	
 # main()
 snippet main
-	int main(int argc, char **argv) {
+	int main(int argc, char **argv)
 	{
 		${1}
-		return 0;
+		return EXIT_SUCCESS;
 	}
 snippet mainn
 	int main(void)
@@ -43,7 +50,8 @@ snippet once
 	#endif /* end of include guard: $1 */
 # If Condition
 snippet if
-	if (${1:/* condition */}) {
+	if (${1:/* condition */}) 
+	{
 		${2:/* code */}
 	}
 snippet el
@@ -74,7 +82,7 @@ snippet forr
 		${5:/* code */}
 	}
 # Function
-snippet fun
+snippet func
 	${1:void} ${2:function_name}(${3})
 	{
 		${4:/* code */}

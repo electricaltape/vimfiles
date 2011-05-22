@@ -3,7 +3,7 @@ snippet #!
 	!#
 snippet docs
 	;
-	;File: `Filename('$1.py', 'foo.py')`
+	;File: `Filename('$1.scm', 'foo.scm')`
 	;Author: `g:snips_author`
 	;Description: ${1}
 	;
@@ -20,9 +20,12 @@ snippet atom?
 snippet def
 	(define ${1})
 snippet ld
-	(lambda ${1})
+	(lambda (${1})
+	  ${2})
 snippet cond
-	(cond ${1})
+	(cond 
+	  (${1})
+	  (else ))
 snippet car
 	(car ${1})
 snippet cdr

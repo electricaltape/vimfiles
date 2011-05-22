@@ -21,8 +21,8 @@ set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 inoremap # X#
 
 " Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
-set omnifunc=pythoncomplete#Complete
-inoremap <Nul> <C-x><C-o>
+" set omnifunc=pythoncomplete#Complete
+" inoremap <Nul> <C-x><C-o>
 
 " Wrap at 72 chars for comments.
 " set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]

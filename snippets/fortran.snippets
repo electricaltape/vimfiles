@@ -5,47 +5,39 @@ snippet docs
 	! Author: `g:snips_author`
 	! Description: ${1}
 	!
-	${2:!rest of program goes here}
-# set up program
-snippet prog
-	program ${1:name}
+snippet program
+	program ${2:name}
 		implicit none
-		${2:!program goes here}
-	end program $1
+		${3:!program goes here}
+	end program $2
 # types
 snippet int
 	integer :: ${1:!variable names}
 snippet real
 	real :: ${1:!variable names}
-# or, do both at the same time:
-snippet start
-	! 
-	! File: `Filename('$1.f03')`
-	! Author: `g:snips_author`
-	! Description: ${1}
-	!
-	program ${2:name}
-		implicit none
-		${3:!program goes here}
-	end program $2
-
 # other stuff
 snippet write
 	write (*,*) ${1:!output here}
 snippet print
 	print *, ${1:!output here}
-
 snippet do
 	do ${1:!optional argument}
 		${2:!code here}
 	end do
-
 snippet sub
 	subroutine ${1:name}(${2:args})
+	implicit none
 		${6: !program goes here}
 	end subroutine $1
 snippet f2py
 	!f2py intent(in) :: ${1:input for f2py}
 	!f2py intent(out) :: ${2:output for f2py}
 	!f2py intent(hide) :: ${3:forced variables}
-	
+snippet cb
+	!------------------------------------------------------------------------------
+	! ${1}
+	!------------------------------------------------------------------------------
+snippet cb1
+	!-------------------------------------------------------------------------
+	! ${1}
+	!-------------------------------------------------------------------------
