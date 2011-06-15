@@ -2,11 +2,11 @@ snippet #!
 	#!/usr/bin/guile -s
 	!#
 snippet docs
-	;
+	;==============================================================================
 	;File: `Filename('$1.scm', 'foo.scm')`
-	;Author: `g:snips_author`
+	;Author: David Wells
 	;Description: ${1}
-	;
+	;==============================================================================
 snippet cb
 	;------------------------------------------------------------------------------
 	; ${1: comment goes here}
@@ -33,3 +33,10 @@ snippet cdr
 snippet disp
 	(display ${1})
 	(newline)
+# building blocks for cond. n is set up so that it works with cond's default
+# first statement.
+snippet n
+	(null? ${1:lat}) '())
+	(${2}
+snippet e
+	(eq? (car lat) ${1:"stuff"})

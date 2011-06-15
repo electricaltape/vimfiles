@@ -1,6 +1,13 @@
+" remember to remove this later.
+" colorscheme desert
+" First, turn off the single quote in autoclose. I use double quotes for
+" matches anyway.
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"'} 
+
 """""Functions for Vim"""""
 
-" This function deletes characters. It is useful for eating spaces in iab commands.
+" This function deletes characters. It is useful for eating spaces in iab 
+" commands.
 func Eatchar(pat)
 	let c = nr2char(getchar(0))
 	return (c =~ a:pat) ? '' : c
@@ -87,13 +94,14 @@ autocmd BufRead,BufNewFile *.mac set filetype=maxima
 autocmd BufRead,BufNewFile,FileReadPost set ff=unix
 autocmd BufRead,BufNewFile pentadactyl-localhost.tmp source ~/.vim/python.vim
 autocmd BufRead,BufNewFile pentadactyl-localhost.tmp set filetype=python
+" autocmd BufRead,BufNewFile *.m set makeprg={/home/dave/MATLAB_INSTALL/bin/glnxa64/mlint}
 
 """""Auto Commands; only execute once!"""""
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
     autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
     " check the folder ~/.vim/skel/ for templates
-    autocmd BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
+    " autocmd BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
     " set correct mode
     autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
     autocmd BufRead,BufNewFile,FileReadPost *.scm source ~/.vim/scheme.vim
@@ -101,9 +109,6 @@ if !exists("autocommands_loaded")
     autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/.vim/latex.vim
     autocmd BufRead,BufNewFile,FileReadPost *.gnuplot source ~/.vim/gnuplot.vim
     autocmd BufRead,BufNewFile,FileReadPost *.hs source ~/.vim/haskell.vim
-    autocmd BufRead,BufNewFile,FileReadPost *.m source ~/.vim/matlab.vim
     autocmd BufRead,BufNewFile,FileReadPost *.ly source ~/.vim/lilypond/lilypond.vim
-    " omni complete settings. Also remaps omnicomplete to control-space
-    " autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    " inoremap <Nul> <C-x><C-o>
+    autocmd BufRead,BufNewFile,FileReadPost *.clj set filetype=clojure
 endif

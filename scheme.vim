@@ -17,6 +17,7 @@ fun! Scheme_eval_defun()
 endfun
 
 "------------------------------------------------------------------------------
-" disable the single quote.
+" disable the single quote from autoclosing and make it not a keyword.
 "------------------------------------------------------------------------------
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"'} 
+set iskeyword=33,35-38,42-58,60-90,94,95,97-122,126,_

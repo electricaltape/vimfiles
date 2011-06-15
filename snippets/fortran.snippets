@@ -1,15 +1,15 @@
 # Module Docstring
 snippet docs
 	! 
-	! File: `Filename('$1.f03')`
-	! Author: `g:snips_author`
+	! File: `Filename('$1.f90')`
+	! Author: David Wells
 	! Description: ${1}
 	!
 snippet program
-	program ${2:name}
+	program ${1:main}
 		implicit none
-		${3:!program goes here}
-	end program $2
+		${2:!program goes here}
+	end program $1
 # types
 snippet int
 	integer :: ${1:!variable names}

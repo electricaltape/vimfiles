@@ -99,4 +99,22 @@ def RemoveBreakpoints():
 
 vim.command( "map <s-f12> :py RemoveBreakpoints()<cr>")
 EOF
+"------------------------------------------------------------------------------
+" Set up the hack that lets me use screen/ipython with vim
+"------------------------------------------------------------------------------
+" nmap <silent> <leader>es :call Python_eval_defun()<cr> " doesn't work.
+nmap <silent> <leader>ef :call Python_send_sexp("run " . expand("%:p"))<cr>
+
+fun! Python_send_sexp(sexp)
+    let ss = escape(a:sexp, '\"')
+    call system("screen -p ipython -X stuff \"" . ss . "\n\"")
+endfun
+
+fun! Python_eval_defun()
+    let pos = getpos('.')
+    silent! exec "normal! 99[(yab"
+    call Python_send_sexp(@")
+    call setpos('.', pos)
+endfun
+
 "vim:syntax=vim
