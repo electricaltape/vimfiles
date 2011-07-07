@@ -22,6 +22,10 @@ snippet def
 snippet ld
 	(lambda (${1})
 	  ${2})
+snippet if
+	(if (${1})
+	  ${2}
+	  (${3}))
 snippet cond
 	(cond 
 	  (${1})
@@ -40,3 +44,7 @@ snippet n
 	(${2}
 snippet e
 	(eq? (car lat) ${1:"stuff"})
+
+snippet let
+	(let ((${1}))
+		)

@@ -3,6 +3,8 @@
 "------------------------------------------------------------------------------
 nmap <silent> <leader>es :call Scheme_eval_defun()<cr>
 nmap <silent> <leader>ef  :call Scheme_send_sexp("(load \"" . expand("%:p") . "\")\n")<cr>
+set tabstop=2
+set shiftwidth=2
 
 fun! Scheme_send_sexp(sexp)
     let ss = escape(a:sexp, '\"')

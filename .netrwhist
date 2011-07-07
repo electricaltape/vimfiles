@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/dave/Documents/Personal Growth/Programming'
 let g:netrw_dirhist_2='/home/dave/Documents/Personal Growth/Programming/Scheme'
 let g:netrw_dirhist_3='/home/dave/Documents/Personal Growth/Programming/Scheme/LittleSchemer'
+let g:netrw_dirhist_4='/home/dave/.vim'
+let g:netrw_dirhist_5='/home/dave/Documents/PersonalGrowth/Programming/CommonLisp/LandOfLisp'
+let g:netrw_dirhist_6='/home/dave/Documents/PersonalGrowth/Programming/Scheme/WizardBook/Ch2'

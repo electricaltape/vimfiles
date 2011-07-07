@@ -14,15 +14,15 @@ snippet cb
 	//-----------------------------------------------------------------------------
 snippet imp
 	import ${1:std.stdio;}
+	${2}
 # main function
 snippet main
-	int main(char[][] args) {
+	void main(char[][] args) {
 		${1://code goes here}
-		return 0;
 	}
 # write
 snippet wr
-	writefln(${1:"input goes here"});
+	writeln(${1:"input goes here"});
 # foreach loop!
 snippet for
 	foreach (${1:/*index*/}; ${2:/*range*/}) {

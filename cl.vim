@@ -1,12 +1,12 @@
 "------------------------------------------------------------------------------
-" Set up the hack that lets me use screen/csi with vim
+" Set up the hack that lets me use screen/sbcl with vim
 "------------------------------------------------------------------------------
 nmap <silent> <leader>es :call CL_eval_defun()<cr>
 nmap <silent> <leader>ef  :call CL_send_sexp("(load \"" . expand("%:p") . "\")\n")<cr>
 
 fun! CL_send_sexp(sexp)
     let ss = escape(a:sexp, '\"')
-    call system("screen -p csi -X stuff \"" . ss . "\n\"")
+    call system("screen -p sbcl -X stuff \"" . ss . "\n\"")
 endfun
 
 fun! CL_eval_defun()

@@ -111,4 +111,6 @@ if !exists("autocommands_loaded")
     autocmd BufRead,BufNewFile,FileReadPost *.hs source ~/.vim/haskell.vim
     autocmd BufRead,BufNewFile,FileReadPost *.ly source ~/.vim/lilypond/lilypond.vim
     autocmd BufRead,BufNewFile,FileReadPost *.clj set filetype=clojure
+    autocmd BufRead,BufNewFile,FileReadPost *.clj source ~/.vim/clojure.vim
+    autocmd BufRead,BufNewFile,FileReadPost *.cl source ~/.vim/cl.vim
 endif
