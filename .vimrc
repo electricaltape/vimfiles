@@ -1,4 +1,8 @@
-" remember to remove this later.
+" if starting in console (no X11 or other gui) turn on desert.
+if !has($DISPLAY)
+    colorscheme desert
+endif
+
 " First, turn off the single quote in autoclose. I use double quotes for
 " matches anyway.
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"'} 
@@ -48,7 +52,13 @@ set showmatch " show matching braces
 set mat=2 " blink for that many tenths of seconds!
 set showcmd " shows what you type
 highlight Pmenu ctermbg=238 gui=bold " set the autocomplete box to legible
-" gui stuff. removed for mac ???
+" gui stuff
+if has('gui_running')
+    colorscheme darkburn
+    set gfn=Inconsolata\ Medium\ 12
+    " NO ONE LIKES BUTTONS
+    set guioptions-=aegimrLtT
+endif
 
 " Now get indentation right.
 set cinwords=if,else,while,do,for,switch,case,function,elif,class
@@ -64,6 +74,7 @@ set autoindent
 let g:tex_flavor='latex'
 
 """"Auto Commands: These are for new buffers so they can run several times""""
+autocmd BufRead,BufNewFile *.sage set filetype=python
 autocmd BufRead,BufNewFile *.geo set filetype=gmsh
 autocmd BufRead,BufNewFile *.mac set filetype=maxima
 autocmd BufRead,BufNewFile,FileReadPost set ff=unix
@@ -78,6 +89,7 @@ if !exists("autocommands_loaded")
     " check the folder ~/.vim/skel/ for templates
     " autocmd BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
     " set correct mode
+    autocmd BufRead,BufNewFile,FileReadPost *.sage source ~/.vim/python.vim
     autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python.vim
     autocmd BufRead,BufNewFile,FileReadPost *.scm source ~/.vim/scheme.vim
     autocmd BufRead,BufNewFile,FileReadPost *.chpl source ~/.vim/chpl.vim
