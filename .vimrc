@@ -1,36 +1,17 @@
 " remember to remove this later.
-" colorscheme desert
 " First, turn off the single quote in autoclose. I use double quotes for
 " matches anyway.
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"'} 
-
-"""""Functions for Vim"""""
-
-" This function deletes characters. It is useful for eating spaces in iab 
-" commands.
-func Eatchar(pat)
-	let c = nr2char(getchar(0))
-	return (c =~ a:pat) ? '' : c
-endfunc
-"Reference eat and move example:
-"iabbr <silent> if if ()<Left><C-R>=Eatchar('\s')<CR>
-
+"
 """""General Settings"""""
-
-function! HelloWorld()
-python << endpython
-import vim
-vim.current.buffer[0] = 'Hello, World'
-endpython
-endfunction
-
+"
 " Really basic stuff. Should be universal.
 set nocompatible
 set mouse=a
-set t_Co=256
+" turn off for mac
+"set t_Co=256
 filetype plugin on
 filetype indent on
-set ofu=syntaxcomplete#Complete
 set hid " change buffer and move with out saving
 
 " compiler settings
@@ -67,13 +48,7 @@ set showmatch " show matching braces
 set mat=2 " blink for that many tenths of seconds!
 set showcmd " shows what you type
 highlight Pmenu ctermbg=238 gui=bold " set the autocomplete box to legible
-" gui stuff
-if has('gui_running')
-    colorscheme darkburn
-    set gfn=Inconsolata\ Medium\ 12
-    " NO ONE LIKES BUTTONS
-    set guioptions-=aegimrLtT
-endif
+" gui stuff. removed for mac ???
 
 " Now get indentation right.
 set cinwords=if,else,while,do,for,switch,case,function,elif,class
